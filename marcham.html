@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcham's Midterm Project</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body and Background */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2d2d72, #000000);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+      animation: backgroundAnimation 2s infinite alternate; /* Background animation */
+    }
+
+    /* Background Animation */
+    @keyframes backgroundAnimation {
+      0% {
+        background: linear-gradient(135deg, #00fff2, #00eeff);
+      }
+      50% {
+        background: linear-gradient(135deg, #000000, #000000);
+      }
+      100% {
+        background: linear-gradient(135deg, #ffffff, #ffffff);
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 100px 20px;
+      background: url('https://via.placeholder.com/1920x1080/000000/FFFFFF?text=Your+Background+Image') no-repeat center center/cover;
+      position: relative;
+      color: white;
+      text-align: center;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      animation: fadeIn 2s ease-out; /* Hero section fade-in */
+    }
+
+    /* Hero Banner (Profile Image) */
+    .hero-banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+      background: none;
+      padding: 0;
+      box-shadow: none;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    /* Animation for Image in Hero Banner */
+    .hero-banner img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid transparent;
+      background: linear-gradient(135deg, #000000, #000000);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+      animation: fadeInImage 2s ease-out;
+    }
+
+    /* Image hover effect */
+    .hero-banner img:hover {
+      transform: scale(1.1) rotate(10deg);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+      border-color: #ffffff;
+    }
+
+    /* Floating effect for the image */
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    /* Applying floating effect to the image */
+    .hero-banner img {
+      animation: fadeInImage 2s ease-out, float 5s infinite ease-in-out;
+    }
+
+    /* Hero Title */
+    .hero-title {
+      z-index: 2;
+      font-size: 36px;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+      margin: 20px 0;
+      animation: textSlideIn 2s ease-out forwards; /* Slide in from left */
+    }
+
+    .hero-title span {
+      display: block;
+      font-size: 24px;
+      font-weight: 300;
+      color: #ffffff;
+      margin-top: 20px;
+      animation: fadeInText 2s ease-out;
+    }
+
+    .hero-title strong {
+      font-size: 40px;
+      color: #ffffff;
+      text-transform: uppercase;
+      animation: fadeInText 2s ease-out;
+    }
+
+    /* Slide-in animation for the title */
+    @keyframes textSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Fade-In Effect for Text */
+    @keyframes fadeInText {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Hover Effect for Title */
+    .hero-title:hover {
+      transform: scale(1.1);
+      color: #ff6f61;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    /* Call to Action Button */
+    .cta-btn {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #000000, #000000);
+      text-align: center;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: all 0.3s ease-in-out;
+      margin-top: 30px;
+      z-index: 2;
+      animation: buttonPulse 1.5s infinite alternate;
+    }
+
+    @keyframes buttonPulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .cta-btn:hover {
+      background: linear-gradient(135deg, #a55fd4, #8145b0);
+      box-shadow: 0px 0px 20px rgba(199, 112, 240, 0.7);
+      transform: translateY(-5px);
+    }
+
+    /* Features Section */
+    .features-container {
+      margin-top: 40px;
+      padding: 40px;
+      background: #222;
+      display: none;
+      animation: fadeInFeatures 2s ease-out forwards;
+    }
+
+    @keyframes fadeInFeatures {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .features {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .feature-item {
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-box {
+      width: 150px;
+      height: 150px;
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid transparent;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+      backdrop-filter: blur(10px);
+      position: relative;
+    }
+
+    .feature-box:hover {
+      border-color: #000000;
+    }
+
+    .feature-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.3s;
+    }
+
+    .feature-box:hover img {
+      transform: scale(1.1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <article>
+      <!-- Hero Section -->
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-banner">
+            <img src="7.jpg" alt="#">
+          </div>
+          <div class="hero-content">
+            <h2 class="hero-title">
+              <span>Hello, I'm Marcham James</span>
+              <strong>Flutter Developer</strong>
+            </h2>
+            <!-- Call to Action Button -->
+            <a href="Main.html" class="cta-btn" id="exploreBtn">Explore My Work</a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
